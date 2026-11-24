@@ -3,7 +3,6 @@
 #include <cstdint>
 #include <limits>
 #include <string>
-#include <boolean>
 
 
 namespace limit_order_book {
@@ -22,22 +21,19 @@ namespace limit_order_book {
     enum class OrderType : std::uint8_t { Limit, Market };
 
     // order structure - fields ordered largest to smallest (minimizes padding)
-    struct Order {
+    struct Order { // 22 bytes + 2 padding = 24 total bytes
         OrderId id;
         Price price;
         Quantity quantity;
         Side side;
         OrderType type;
-    }
+    };
 
+    // trade structure
     struct Trade {
-        OrderId aggressor;
-        OrderId resting;
+        OrderId aggressor; // the new incoming order that matches against the resting order
+        OrderId resting; // order already sitting in the book. It's resting because it was placed at a price that didn't match anything else in the order book at the time
         Price price;
         Quantity qty;
-    }
-
-
-
-
+    };
 }
