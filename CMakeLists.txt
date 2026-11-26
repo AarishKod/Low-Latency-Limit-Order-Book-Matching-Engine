@@ -11,7 +11,8 @@ FetchContent_Declare(Catch2 GIT_REPOSITORY https://github.com/catchorg/Catch2.gi
 FetchContent_MakeAvailable(Catch2)
 
 add_executable(tests tests/test_smoke.cpp tests/test_types.cpp
-    tests/test_matching.cpp)
+    tests/test_matching.cpp
+    include/lob/order_book.hpp)
 target_link_libraries(tests PRIVATE lob Catch2::Catch2WithMain)
 enable_testing()
 add_test(NAME tests COMMAND tests)
