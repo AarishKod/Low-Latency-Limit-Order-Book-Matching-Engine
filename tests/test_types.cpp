@@ -1,6 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
 #include <type_traits>
-#include "lob/types.hpp"
+#include <lob/types.hpp>
 
 /*
 tests I need for the types:

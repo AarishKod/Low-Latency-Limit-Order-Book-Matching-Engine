@@ -2,10 +2,12 @@
 
 #include <vector>
 #include <optional>
+#include <functional>
 #include <map>
+#include <list>
 #include <unordered_map>
 
-#include "<lob/types.hpp>"
+#include <lob/types.hpp>
 
 namespace limit_order_book {
 
@@ -88,5 +90,5 @@ namespace limit_order_book {
             std::map<Price, std::list<Order>, std::greater<Price>> bids_;
             std::map<Price, std::list<Order>> asks_;
             std::unordered_map<OrderId, std::list<Order>::iterator> index_;
-    }
+    };
 }

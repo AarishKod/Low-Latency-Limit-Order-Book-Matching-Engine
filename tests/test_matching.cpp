@@ -1,5 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
-#include "lob/types.hpp"
+#include <type_traits>
+#include <lob/order_book.hpp>
 
 using namespace limit_order_book;
 
